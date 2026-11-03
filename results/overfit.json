@@ -1,0 +1,23 @@
+{
+ "model": "simple_hier",
+ "repo": "LM_2023_Simple-hierarchical-transformer",
+ "target_repo": "LM_Dec_Long_SimpleHierarchical",
+ "category": "Long",
+ "upstream": "lucidrains/simple-hierarchical-transformer (MIT)",
+ "unified": [
+  "dim 512 depth 6 (upstream 1024/8); LM-02 uses its own loss (CE + recon + hierarchical AR), LM-05 uses CE on answers only; ignore_index -100 so byte 0 is not ignored"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "overfit",
+ "started": "2026-10-19 14:37:51",
+ "smoke": false,
+ "first_ce": 5.669708251953125,
+ "last_ce": 0.0013937281910330057,
+ "passed": true,
+ "pass_loss": 0.5,
+ "steps": 400,
+ "seconds": 36.1,
+ "lr": 0.001,
+ "note": "overfit uses Adam 1e-3 on 4 x 256 bytes; only an implementation check"
+}

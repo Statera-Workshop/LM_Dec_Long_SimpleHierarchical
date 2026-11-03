@@ -1,0 +1,38 @@
+{
+ "model": "simple_hier",
+ "repo": "LM_2023_Simple-hierarchical-transformer",
+ "target_repo": "LM_Dec_Long_SimpleHierarchical",
+ "category": "Long",
+ "upstream": "lucidrains/simple-hierarchical-transformer (MIT)",
+ "unified": [
+  "dim 512 depth 6 (upstream 1024/8); LM-02 uses its own loss (CE + recon + hierarchical AR), LM-05 uses CE on answers only; ignore_index -100 so byte 0 is not ignored"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "check",
+ "started": "2026-10-19 14:21:55",
+ "smoke": false,
+ "params": 51159040,
+ "causality": {
+  "causal": true,
+  "uses_input": true,
+  "worst_leak": 0.0,
+  "min_effect": 2.441340923309326,
+  "logit_scale": 2.5414848790893556,
+  "length": 256,
+  "positions": [
+   17,
+   101,
+   200
+  ]
+ },
+ "data_checks": [
+  "enwik8 train bytes  90,000,000 expected  90,000,000 OK",
+  "enwik8 valid bytes   5,000,000 expected   5,000,000 OK",
+  "enwik8 test  bytes   5,000,000 expected   5,000,000 OK",
+  "enwik8 distinct byte values in first 10M train bytes: 200 (vocab 256)",
+  "recall L=512 random gap: 16 answers/sample, keys/values/distractors disjoint OK",
+  "recall L=512 max gap: 16 answers/sample, keys/values/distractors disjoint OK"
+ ],
+ "seconds": 2.3
+}

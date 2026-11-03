@@ -1,0 +1,103 @@
+{
+ "model": "simple_hier",
+ "repo": "LM_2023_Simple-hierarchical-transformer",
+ "target_repo": "LM_Dec_Long_SimpleHierarchical",
+ "category": "Long",
+ "upstream": "lucidrains/simple-hierarchical-transformer (MIT)",
+ "unified": [
+  "dim 512 depth 6 (upstream 1024/8); LM-02 uses its own loss (CE + recon + hierarchical AR), LM-05 uses CE on answers only; ignore_index -100 so byte 0 is not ignored"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm05",
+ "started": "2026-10-19 18:13:34",
+ "smoke": false,
+ "params": 51159040,
+ "micro_batch": null,
+ "steps": 6000,
+ "budget_steps": 6000,
+ "capped": false,
+ "batch": 32,
+ "train_len": 512,
+ "pairs": 16,
+ "bf16": true,
+ "minutes": 97.5,
+ "history": [
+  {
+   "step": 500,
+   "loss": 4.171877861022949,
+   "acc_train_len": 0.017578125
+  },
+  {
+   "step": 1000,
+   "loss": 4.16453218460083,
+   "acc_train_len": 0.017578125
+  },
+  {
+   "step": 1500,
+   "loss": 4.16506290435791,
+   "acc_train_len": 0.013671875
+  },
+  {
+   "step": 2000,
+   "loss": 4.15131950378418,
+   "acc_train_len": 0.017578125
+  },
+  {
+   "step": 2500,
+   "loss": 4.128321170806885,
+   "acc_train_len": 0.02490234375
+  },
+  {
+   "step": 3000,
+   "loss": 4.123402118682861,
+   "acc_train_len": 0.02734375
+  },
+  {
+   "step": 3500,
+   "loss": 4.113165378570557,
+   "acc_train_len": 0.02685546875
+  },
+  {
+   "step": 4000,
+   "loss": 4.114609241485596,
+   "acc_train_len": 0.0244140625
+  },
+  {
+   "step": 4500,
+   "loss": 4.129207611083984,
+   "acc_train_len": 0.0224609375
+  },
+  {
+   "step": 5000,
+   "loss": 4.076009273529053,
+   "acc_train_len": 0.025390625
+  },
+  {
+   "step": 5500,
+   "loss": 4.100224018096924,
+   "acc_train_len": 0.03955078125
+  },
+  {
+   "step": 6000,
+   "loss": 4.072265148162842,
+   "acc_train_len": 0.041015625
+  }
+ ],
+ "test": {
+  "512": {
+   "acc": 0.0447998046875,
+   "answers": 8192
+  },
+  "1024": {
+   "acc": 0.0159912109375,
+   "answers": 8192
+  },
+  "2048": {
+   "acc": 0.0142822265625,
+   "answers": 8192
+  }
+ },
+ "chance": 0.015625,
+ "seconds": 5854.8
+}

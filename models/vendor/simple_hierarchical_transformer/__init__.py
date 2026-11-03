@@ -1,0 +1,2 @@
+from simple_hierarchical_transformer.simple_hierarchical_transformer import HierarchicalTransformer
+
